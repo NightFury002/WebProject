@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lamborghini Information</title>
+
+    <link rel="icon" href="https://i.pinimg.com/736x/e8/a2/68/e8a268faaf569d17055217d6656564a6.jpg">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #eaeaea;
+            color: #333;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: black;
+            height: 60px;
+            position: fixed; /* Thay đổi này */
+            top: 0; /* Đặt nó ở trên cùng */
+            left: 0; /* Đảm bảo nó bắt đầu từ bên trái */
+            right: 0; /* Đảm bảo nó kéo dài ra phía bên phải */
+            z-index: 1000; /* Đảm bảo nó nằm trên các phần khác */
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: white;
+            padding: 20px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .navbar a:hover {
+            background-color: gray;
+            color: black;
+            transition: 0.3s;
+        }
+
+        .navbar .home {
+            background-color: lightgray;
+            color: black;
+        }
+
+        .navbar .home:hover {
+            background-color: gray;
+            color: white;
+        }
+
+        /* Home section */
+        #homeSection {
+            min-height: 100vh;
+            background-color: #FFD700; /* Màu vàng nổi bật */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px;
+        }
+
+        #homeSection img {
+            max-width: 200px;
+            margin-bottom: 20px;
+        }
+
+        #homeSection h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        #homeSection p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            color: #333;
+        }
+
+        /* Aventador section */
+        #aventador {
+            min-height: auto;
+            background-color: #ffe4e1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            text-align: center;
+            overflow: hidden; /* Đảm bảo không có tràn */
+        }
+
+        /* Huracan section */
+        #huracan {
+            min-height: auto;
+            background-color: #e0f7fa;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        /* Centenario section */
+        #centenario {
+            min-height: auto;
+            background-color: #e6ffe6;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            text-align: center;
+            margin-bottom: 50px;
+            overflow: hidden;
+        }
+
+        /* Car styles */
+        .car img {
+            width: 80%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .car h2 {
+            margin-bottom: 10px;
+            font-size: 2rem;
+            color: #444;
+        }
+
+        .car p {
+            margin-bottom: 15px;
+            color: #555;
+            font-size: 1.1rem;
+        }
+
+        details summary {
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: #444;
+        }
+
+        details summary:hover {
+            color: #007BFF;
+        }
+
+        details[open] {
+            display: block; /* Đảm bảo mở rộng khi thông tin hiện lên */
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            padding: 5px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(90deg, #000000, #444);
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+            box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .car img {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="navbar">
+            <a class="home" onclick="scrollToSection('homeSection')">HOME</a>
+            <a onclick="scrollToSection('aventador')">Lamborghini Aventador</a>
+            <a onclick="scrollToSection('huracan')">Lamborghini Huracan</a>
+            <a onclick="scrollToSection('centenario')">Lamborghini Centenario</a>
+        </div>
+
+        <!-- Phần Home với ảnh Lamborghini -->
+        <div id="homeSection">
+            <img src="https://upload.wikimedia.org/wikipedia/vi/d/df/Lamborghini_Logo.svg" alt="Lamborghini Logo">
+            <h2>Giới thiệu về Lamborghini</h2>
+            <p>Automobili Lamborghini S.p.A., thường gọi tắt là Lamborghini, là nhà sản xuất siêu xe thể thao cao cấp của Italy, có trụ sở chính và xưởng sản xuất đặt tại Sant' Agata Bolognese, gần Bologna, Italy. Hiện tại Lamborghini là công ty con của công ty Audi AG thuộc tập đoàn ô tô Volkswagen của Đức.</p>
+        </div>
+
+        <!-- Aventador -->
+        <div id="aventador" class="car">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Mansory%2C_GIMS_2019%2C_Le_Grand-Saconnex_%28GIMS0578%29.jpg" alt="Lamborghini Aventador">
+            <h2>Lamborghini Aventador</h2>
+            <p>Aventador là biểu tượng của sự mạnh mẽ với động cơ V12 và thiết kế hầm hố.</p>
+            <details>
+                <summary>Thông số kỹ thuật</summary>
+                <ul>
+                    <li>Nhà chế tạo: Lamborghini</li>
+                    <li>Sản xuất: Tháng 2 năm 2011–27 tháng 9 năm 2022</li>
+                    <li>Lắp ráp: Sant'Agata Bolognese, Ý</li>
+                    <li>Nhà thiết kế: Filippo Perini</li>
+                    <li>Phân loại: Xe thể thao (S)</li>
+                    <li>Kiểu thân xe: 2 cửa coupé, 2 cửa roadster</li>
+                    <li>Bố trí: Động cơ đặt giữa, dẫn động 4 bánh</li>
+                    <li>Động cơ: 6.5 L L539 V12</li>
+                    <li>Truyền động: Hộp số bán tự động 7 cấp ISR</li>
+                    <li>Chiều dài cơ sở: 2.700 mm</li>
+                    <li>Chiều dài: 4.780 mm</li>
+                    <li>Chiều rộng: 2.030 mm (với gương: 2.265 mm)</li>
+                    <li>Chiều cao: 1.136 mm</li>
+                    <li>Trọng lượng: 1.575 kg (khô), 1.731 kg (với chất lỏng, Châu Âu)</li>
+                </ul>
+            </details>
+        </div>
+
+        <!-- Huracan -->
+        <div id="huracan" class="car">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/0f/IAA_2017%2C_Frankfurt_%281Y7A2081%29.jpg" alt="Lamborghini Huracan">
+            <h2>Lamborghini Huracan</h2>
+            <p>Huracan kết hợp giữa hiệu suất cao và thiết kế tinh tế, được trang bị động cơ V10 mạnh mẽ.</p>
+            <details>
+                <summary>Thông số kỹ thuật</summary>
+                <ul>
+                    <li>Nhà chế tạo: Lamborghini</li>
+                    <li>Sản xuất: 2014–nay</li>
+                    <li>Lắp ráp: Sant'Agata Bolognese, Ý</li>
+                    <li>Phiên bản tiền nhiệm: Lamborghini Gallardo</li>
+                    <li>Phân loại: Xe thể thao (S)</li>
+                    <li>Kiểu xe: 2 cửa coupé, 2 cửa convertible</li>
+                    <li>Hệ thống thắng: Động cơ đặt giữa, dẫn động bốn bánh (LP610-4, LP640-4), động cơ đặt giữa phía sau, dẫn động cầu sau (LP580-2, LP620-2, LP610-2, STO)</li>
+                    <li>Nền tảng: Hệ thống mô-đun thể thao</li>
+                    <li>Động cơ: 5.2 L bắn lẻ V10</li>
+                    <li>Truyền động: 7 cấp dual-clutch</li>
+                    <li>Chiều dài cơ sở: 2.620 mm (103,1 in)</li>
+                    <li>Chiều dài: 4.459 mm (175,6 in)</li>
+                    <li>Chiều rộng: 1.924 mm (75,7 in)</li>
+                    <li>Chiều cao: 1.165 mm (45,9 in)</li>
+                    <li>Trọng lượng: 1.422 kg (không chứa chất lỏng), 1.553 kg (chứa chất lỏng)</li>
+                    <li>Thiết kế: Filippo Perini, Mitja Borkert (LP640-4, bản nâng cấp), Nelson Simoes (Performante)</li>
+                    <li>Thiết kế tương đương: Audi R8 (Type 4S), Italdesign Zerouno, Ares Design Project1</li>
+                </ul>
+            </details>
+        </div>
+
+        <!-- Centenario -->
+        <div id="centenario" class="car">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/2016-03-01_Geneva_Motor_Show_1354.JPG" alt="Lamborghini Centenario">
+            <h2>Lamborghini Centenario</h2>
+            <p>Centenario được thiết kế để kỷ niệm sinh nhật thứ 100 của người sáng lập Lamborghini với động cơ V12 hiệu suất cao.</p>
+            <details>
+                <summary>Thông số kỹ thuật</summary>
+                <ul>
+                    <li>Nhà chế tạo: Lamborghini</li>
+                    <li>Sản xuất: 2016–2017 (20 coupés và 20 roadsters)</li>
+                    <li>Lắp ráp: Sant'Agata Bolognese, Ý</li>
+                    <li>Phân loại: Siêu xe (Supercar)</li>
+                    <li>Kiểu thân xe: 2 cửa coupé, 2 cửa roadster</li>
+                    <li>Bố trí: Động cơ đặt giữa, dẫn động tất cả các bánh</li>
+                    <li>Liên quan: Lamborghini Aventador</li>
+                    <li>Động cơ: 6.5 L L539 V12</li>
+                    <li>Truyền động: Hộp số bán tự động 7 cấp ISR</li>
+                    <li>Chiều dài cơ sở: 2.700 mm (106,3 in)</li>
+                    <li>Chiều dài: 4.924 mm (193,9 in)</li>
+                    <li>Chiều rộng: 2.062 mm (81,2 in)</li>
+                    <li>Chiều cao: 1.143 mm (45,0 in)</li>
+                    <li>Trọng lượng (khô): Coupé: 1.520 kg (3.351 lb), Roadster: 1.570 kg (3.461 lb)</li>
+                    <li>Trọng lượng (có chất lỏng): Coupé: 1.764 kg (3.889 lb), Roadster: 1.814 kg (3.999 lb)</li>
+                </ul>
+            </details>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Lamborghini Cars</p>
+    </footer>
+
+    <script>
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            section.scrollIntoView({ behavior: "smooth" });
+        }
+    </script>
+</body>
+</html>
